@@ -24,6 +24,7 @@ export default function BikePagination({
     setPage(newPage);
     setSearchParams({ page: newPage.toString() });
     navigate(`?page=${newPage}`, { replace: true });
+    window.scrollTo({ top: 0 });
   };
 
   useEffect(() => {
