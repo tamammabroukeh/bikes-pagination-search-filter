@@ -39,7 +39,7 @@ function Bikes() {
       </div>
     );
   }
-  console.log(data);
+  // console.log(data);
   return (
     <section className="flex flex-col md:gap-3 lg:gap-5">
       <BikeTitleSearch {...{ title, setTitle }} />

@@ -40,7 +40,7 @@ export default function BikePagination({
   const endPage = Math.min(numberOfPages + 2, pagesArray.length);
 
   const visiblePages = pagesArray.slice(startPage - 1, endPage);
-  console.log(page);
+  // console.log(page);
   return (
     <Pagination className="cursor-pointer">
       <PaginationContent>
