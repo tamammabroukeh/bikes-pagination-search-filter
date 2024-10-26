@@ -10,7 +10,7 @@ const Header = () => {
         >
           Bikewise
         </Link>
-        <div className="hidden md:block">
+        <div>
           <MainNav />
         </div>
       </div>

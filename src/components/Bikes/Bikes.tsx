@@ -45,7 +45,7 @@ function Bikes() {
       <BikeTitleSearch {...{ title, setTitle }} />
       {isLoading && loading}
       {data && content}
-      {!isLoading && !isFetching && (
+      {!isLoading && !isFetching && title && (
         <NoData title="No bikes matching your search" />
       )}
       {isFetching && loading}
