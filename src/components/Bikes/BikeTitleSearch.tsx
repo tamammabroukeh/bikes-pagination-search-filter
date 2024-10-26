@@ -15,6 +15,7 @@ export default function BikeTitleSearch({ title, setTitle }: IBikeSearch) {
       <Input
         className="border-2 py-3 mx-10 max-w-60 mb-3"
         value={title}
+        placeholder="Search bikes here..."
         onChange={handleSearchChange}
       />
     </div>
