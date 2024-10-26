@@ -26,6 +26,9 @@ function Bikes() {
     <Loader2 className="animate-spin mx-auto my-5 h-16 w-16 text-blue-400" />
   );
   const data = bikes?.data?.bikes;
+  if (!data) {
+    return <NoData title="No bikes matching your search" />;
+  }
   let content: ReactNode;
   if (isError) content = error as string;
   if (isSuccess && Array.isArray(data)) {
@@ -45,9 +48,6 @@ function Bikes() {
       <BikeTitleSearch {...{ title, setTitle }} />
       {isLoading && loading}
       {data && content}
-      {!isLoading && !isFetching && title && (
-        <NoData title="No bikes matching your search" />
-      )}
       {isFetching && loading}
       {!isFetching && data && data?.length > 1 && (
         <BikePagination
