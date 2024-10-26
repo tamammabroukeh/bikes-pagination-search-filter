@@ -5,6 +5,7 @@ import { ReactNode } from "react";
 import BikePagination from "./BikePagination";
 import BikeTitleSearch from "./BikeTitleSearch";
 import NoData from "./NoData";
+import Error from "../feedback/Error";
 function Bikes() {
   const {
     bikes,
@@ -26,11 +27,11 @@ function Bikes() {
     <Loader2 className="animate-spin mx-auto my-5 h-16 w-16 text-blue-400" />
   );
   const data = bikes?.data?.bikes;
-  if (!data) {
-    return <NoData title="No bikes matching your search" />;
-  }
+  if (!data) return <NoData title="No bikes matching your search" />;
+
+  if (isError) return <Error error={error as string} />;
+
   let content: ReactNode;
-  if (isError) content = error as string;
   if (isSuccess && Array.isArray(data)) {
     content = (
       <div className="flex lg:px-10 flex-col gap-2">
